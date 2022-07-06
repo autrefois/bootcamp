@@ -9,7 +9,8 @@ airport_logs_dicts = (dict(zip(cols, data)) for data in list_line)
 clj_ams_prices = (
     int(airport_logs_dict["ticket_price"])
     for airport_logs_dict in airport_logs_dicts
-    if (airport_logs_dict["departure"] == "CLJ" and airport_logs_dict["arrival"] == "AMS")
+    if (airport_logs_dict["departure"] == "CLJ"
+        and airport_logs_dict["arrival"] == "AMS")
 )
 
 # for testing purposes - check all the prices
