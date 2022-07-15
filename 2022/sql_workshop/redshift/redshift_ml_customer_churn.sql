@@ -2,9 +2,9 @@
 /* Tutorial avaialble here: https://docs.aws.amazon.com/redshift/latest/dg/tutorial_customer_churn.html */
 
 /** Prepare the dataset */
-DROP TABLE IF EXISTS sandbox.customer_activity;
+DROP TABLE IF EXISTS eds_sandbox.customer_activity;
 CREATE TABLE
-    sandbox.customer_activity
+    eds_sandbox.customer_activity
     (
         state VARCHAR(2),
         account_length INT,
@@ -44,7 +44,7 @@ CREATE MODEL customer_churn_auto_model FROM (
         total_charge/account_length AS average_daily_spend, 
         cust_serv_calls/account_length AS average_daily_cases,
         churn 
-      FROM sandbox.customer_activity
+      FROM eds_sandbox.customer_activity
       WHERE  record_date < '2020-01-01' 
   )
   TARGET churn 
@@ -53,7 +53,7 @@ CREATE MODEL customer_churn_auto_model FROM (
   SETTINGS (S3_BUCKET 'redshift-ml-123456789012');
 
 /** Copy data from file to the table */
-COPY sandbox.customer_activity
+COPY eds_sandbox.customer_activity
 FROM 's3://bucket.landing/redshift_ml/customer_activity.csv'
 REGION 'eu-west-1' 
 CREDENTIALS 'aws_access_key_id=xxxx;aws_secret_access_key=xxxxx'
@@ -68,7 +68,7 @@ SELECT
                                total_charge / account_length,
                                cust_serv_calls / account_length) AS active
 FROM
-    sandbox.customer_activity
+    eds_sandbox.customer_activity
 WHERE
     record_date > '2020-01-01';
 
@@ -85,7 +85,7 @@ WITH
                                        total_charge / account_length,
                                        cust_serv_calls / account_length) AS active
     FROM
-        sandbox.customer_activity
+        eds_sandbox.customer_activity
     WHERE
         record_date > '2020-01-01'
     )
