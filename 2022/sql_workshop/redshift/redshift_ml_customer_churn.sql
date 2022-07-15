@@ -1,5 +1,5 @@
 /** Customer Churn Model */
-/* Tutorial avaialble here: https://docs.aws.amazon.com/redshift/latest/dg/tutorial_customer_churn.html */
+/* Tutorial available here: https://docs.aws.amazon.com/redshift/latest/dg/tutorial_customer_churn.html */
 
 /** Prepare the dataset */
 DROP TABLE IF EXISTS eds_sandbox.customer_activity;
