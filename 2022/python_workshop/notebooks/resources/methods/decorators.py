@@ -1,0 +1,39 @@
+import functools
+import time
+
+
+def do_twice(func):
+    """Run the decorated function twice"""
+
+    @functools.wraps(func)
+    def wrapper_do_twice(*args, **kwargs):
+        ....
+        return ....
+
+    return wrapper_do_twice
+
+
+def timer(func):
+    """Print the runtime of the decorated function"""
+
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start = time.perf_counter()
+        value = ...
+        end = ...
+        run_time = end - start
+        print(f"Finished {func.__name__!r} in {run_time:.4f} seconds")
+        return value
+
+    return wrapper_timer
+
+
+def slow_down_1sec(func):
+    """Sleep 1 second before calling the function"""
+
+    @functools.wraps(func)
+    def wrapper_slow_down(*args, **kwargs):
+        ...
+        return func(*args, **kwargs)
+
+    return wrapper_slow_down

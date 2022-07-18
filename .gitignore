@@ -5,3 +5,4 @@ bootcamp.code-workspace
 2022/python_workshop/notebooks/resources/solved_exercises/*
 2022/python_workshop/.DS_Store
 2022/sql_workshop/.DS_Store
+*.pyc
