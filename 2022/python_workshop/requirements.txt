@@ -2,3 +2,5 @@ redshift_connector
 flake8
 pandas
 numpy
+requests
+matplotlib
