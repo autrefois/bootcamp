@@ -7,6 +7,3 @@
 #b = 2
 
 #c = 3
-
-x = input("baga ceva: ")
-print(x)
