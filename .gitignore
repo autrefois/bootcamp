@@ -3,6 +3,8 @@
 /.ipynb_checkpoints
 bootcamp.code-workspace
 2022/python_workshop/notebooks/resources/resolved/*
-2022/python_workshop/notebooks/results/*
+requirements_log.txt
+f1_career_*.csv
 !.gitkeep
 !f1_driver_career_analysis.ipynb
+!barem_*
