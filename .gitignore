@@ -1,8 +1,10 @@
-/.DS_Store
-/.ipynb_checkpoints
-2022/.DS_Store
-bootcamp.code-workspace
-2022/python_workshop/notebooks/resources/solved_exercises/*
-2022/python_workshop/.DS_Store
-2022/sql_workshop/.DS_Store
+*.DS_Store
 *.pyc
+/.ipynb_checkpoints
+bootcamp.code-workspace
+2022/python_workshop/notebooks/resources/resolved/*
+requirements_log.txt
+f1_career_*.csv
+!.gitkeep
+!f1_driver_career_analysis.ipynb
+!barem_*
